@@ -14,12 +14,12 @@ The apartment building is very tall, and the basement is very deep; he will neve
 """
 
 
-def findFloor(input):
+def find_floor(input):
     """ Count the number of ( and ) to find the right floor """
     return input.count('(') - input.count(')')
 
 
-def findBasementEntryChar(input):
+def find_basement_entry_char(input):
     """ Find the position of the ) character that makes the counter equal to -1"""
     counter = 0
     for i, val in enumerate(input):
