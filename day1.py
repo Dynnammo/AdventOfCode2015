@@ -11,15 +11,24 @@ Santa is trying to deliver presents in a large apartment building, but he can't 
 An opening parenthesis, (, means he should go up one floor, and a closing parenthesis, ), means he should go down one floor.
 
 The apartment building is very tall, and the basement is very deep; he will never find the top or bottom floors.
+
+--- Part Two ---
+Now, given the same instructions, find the position of the first character that causes him to enter the basement (floor -1). The first character in the instructions has position 1, the second character has position 2, and so on.
+
+For example:
+
+) causes him to enter the basement at character position 1.
+()()) causes him to enter the basement at character position 5.
+What is the position of the character that causes Santa to first enter the basement?
 """
 
 
-def findFloor(input):
+def find_floor(input):
     """ Count the number of ( and ) to find the right floor """
     return input.count('(') - input.count(')')
 
 
-def findBasementEntryChar(input):
+def find_basement_entry_char(input):
     """ Find the position of the ) character that makes the counter equal to -1"""
     counter = 0
     for i, val in enumerate(input):
