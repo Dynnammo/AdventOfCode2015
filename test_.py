@@ -11,6 +11,8 @@ from day3 import (
     number_of_distributed_presents,
     number_of_distributed_presents_with_robot
 )
+from day4 import brute_force_hash_finding
+
 
 answers = loads(open('answers.json').read())
 
@@ -60,3 +62,12 @@ def test_day_3():
 
     assert number_of_distributed_presents_with_robot(input_day_3) == \
         answers['day3']['part2']
+
+
+def test_day_4():
+    input_day_4 = open('inputs/day4', 'r').read()
+    assert brute_force_hash_finding('abcdef') == 609043
+    assert brute_force_hash_finding('pqrstuv') == 1048970
+
+    assert brute_force_hash_finding(input_day_4, 5) == answers['day4']['part1']
+    assert brute_force_hash_finding(input_day_4, 6) == answers['day4']['part2']
