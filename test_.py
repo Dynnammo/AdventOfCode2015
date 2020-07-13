@@ -12,7 +12,12 @@ from day3 import (
     number_of_distributed_presents_with_robot
 )
 from day4 import brute_force_hash_finding
-
+from day5 import (
+    is_nice,
+    criteria_to_respect_part1,
+    criteria_to_respect_part2,
+    count_nice_string
+)
 
 answers = loads(open('answers.json').read())
 
@@ -71,3 +76,20 @@ def test_day_4():
 
     assert brute_force_hash_finding(input_day_4, 5) == answers['day4']['part1']
     assert brute_force_hash_finding(input_day_4, 6) == answers['day4']['part2']
+
+
+def test_day_5():
+    input_day_5 = open('./inputs/day5', 'r').read().split('\n')
+    assert not is_nice("jchzalrnumimnmhp", criteria_to_respect_part1)
+    assert not is_nice("haegwjzuvuyypxyu", criteria_to_respect_part1)
+    assert not is_nice("dvszwmarrgswjxmb", criteria_to_respect_part1)
+    assert is_nice("ugknbfddgicrmopn", criteria_to_respect_part1)
+    assert count_nice_string(input_day_5, criteria_to_respect_part1) == \
+        answers['day5']['part1']
+
+    assert not is_nice("uurcxstgmygtbstg", criteria_to_respect_part2)
+    assert not is_nice("ieodomkazucvgmuy", criteria_to_respect_part2)
+    assert is_nice("xxyxx", criteria_to_respect_part2)
+    assert is_nice("qjhvhtzxzqqjkmpb", criteria_to_respect_part2)
+    assert count_nice_string(input_day_5, criteria_to_respect_part2) == \
+        answers['day5']['part2']
