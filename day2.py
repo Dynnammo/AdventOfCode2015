@@ -40,8 +40,7 @@ the present plus 1*1*10 = 10 feet of ribbon for the bow, for a total of 14
 feet.
 How many total feet of ribbon should they order?
 """
-
-# Part 1
+from importer import open_multiline_line_file
 
 
 def compute_paper_need(length, width, height):
@@ -77,7 +76,7 @@ def total_ribbon_needed(input):
 
 
 # Results
-data = open('./inputs/day2', 'r').read().split('\n')
+data = open_multiline_line_file('day2')
 
 print("Result for part 1 :", total_paper_needed(data))
 print("Result for part 2 :", total_ribbon_needed(data))

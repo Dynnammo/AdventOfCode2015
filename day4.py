@@ -22,6 +22,7 @@ pqrstuv1048970 looks like 000006136ef....
 
 Now find one that starts with six zeroes.
 """
+from importer import open_single_line_file
 from hashlib import md5
 
 
@@ -35,6 +36,8 @@ def brute_force_hash_finding(input, lenght_of_0=5):
     return number
 
 
-data = open('inputs/day4', 'r').read()
+# Results
+data = open_single_line_file('day4')
 
-print(brute_force_hash_finding(data, 6))
+print("Result for part 1 :", brute_force_hash_finding(data, 5))
+print("Result for part 1 :", brute_force_hash_finding(data, 6))

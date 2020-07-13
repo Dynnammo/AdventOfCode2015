@@ -48,7 +48,7 @@ ieodomkazucvgmuy is naughty because it has a repeating letter with one between
 (odo), but no pair that appears twice.
 How many strings are nice under these new rules?
 """
-
+from importer import open_multiline_line_file
 import re
 
 
@@ -93,8 +93,6 @@ def count_nice_string(input, criteria_to_respect):
     return counter
 
 
-data = open('./inputs/day5', 'r').read().split('\n')
-
 criteria_to_respect_part1 = [check_row, check_vowels, check_exceptions]
 
 criteria_to_respect_part2 = [
@@ -103,6 +101,8 @@ criteria_to_respect_part2 = [
 ]
 
 # Results
+data = open_multiline_line_file('day5')
+
 print(
     "Result for part 1 :", count_nice_string(data, criteria_to_respect_part1)
 )

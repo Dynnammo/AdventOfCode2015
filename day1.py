@@ -34,6 +34,7 @@ For example:
 What is the position of the character that causes Santa to first enter the
 basement?
 """
+from importer import open_single_line_file
 
 
 def find_floor(input):
@@ -50,3 +51,10 @@ def find_basement_entry_char(input):
         counter = counter + 1 if val == '(' else counter - 1
         if counter == -1:
             return i+1
+
+
+# Results
+data = open_single_line_file('day1')
+
+print("Result for part 1 :", find_floor(data))
+print("Result for part 2 :", find_basement_entry_char(data))

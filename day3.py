@@ -40,6 +40,7 @@ where they started.
 ^v^v^v^v^v now delivers presents to 11 houses, with Santa going one direction
 and Robo-Santa going the other.
 """
+from importer import open_single_line_file
 
 
 def number_of_distributed_presents(input):
@@ -74,6 +75,8 @@ def get_positions_from_path(instructions):
     return registered_positions
 
 
-data = open('./inputs/day3', 'r').read()
+# Results
+data = open_single_line_file('day3')
 
-print(number_of_distributed_presents(data))
+print("Result for part 1 :", number_of_distributed_presents(data))
+print("Result for part 2 :", number_of_distributed_presents_with_robot(data))
